@@ -12,6 +12,7 @@ typedef struct No_Arvore
 }No_Arvore;
 
 No_Arvore *Cria_raiz(char pergunta_da_raiz[]);
+No_Arvore *Remover_no(No_Arvore * no);
 int Add_no_esquerdo(No_Arvore *raiz,char pergunta_do_no[]);
 int Add_no_direito(No_Arvore *raiz,char pergunta_do_no[]);
 
