@@ -1,9 +1,11 @@
 #define CATCH_CONFIG_MAIN
 #define OPERACAO_SUCEDIDA 1
 
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
 #include "catch.hpp"
 #include "arvore.hpp"
-#include <iostream>
 
 TEST_CASE("Criando a raiz da Arvore")
 {
@@ -12,12 +14,12 @@ TEST_CASE("Criando a raiz da Arvore")
 
 TEST_CASE("Adicionar no a esquerda")
 {
-	No_Arvore * raiz;
-	REQUIRE(Add_no_esquerda(raiz,"pergunta generica") == OPERACAO_SUCEDIDA);
+	No_Arvore * raiz = Cria_raiz("pergunta generica");
+	REQUIRE(Add_no_esquerdo(raiz,"pergunta generica") == OPERACAO_SUCEDIDA);
 }
 
 TEST_CASE("Adicionar no a direita")
 {
-	No_Arvore * raiz;	
-	REQUIRE(Add_no_direita(raiz,"pergunta generica") == OPERACAO_SUCEDIDA);
+	No_Arvore * raiz = Cria_raiz("pergunta generica");	
+	REQUIRE(Add_no_direito(raiz,"pergunta generica") == OPERACAO_SUCEDIDA);
 }
