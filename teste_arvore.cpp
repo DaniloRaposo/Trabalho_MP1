@@ -9,17 +9,33 @@
 
 TEST_CASE("Criando a raiz da Arvore")
 {
-	REQUIRE(Cria_raiz("pergunta generica") != NULL);
+	char pergunta_generica[] = "pergunta generica";
+
+	REQUIRE(Cria_raiz(pergunta_generica) != NULL);
 }
 
 TEST_CASE("Adicionar no a esquerda")
 {
-	No_Arvore * raiz = Cria_raiz("pergunta generica");
-	REQUIRE(Add_no_esquerdo(raiz,"pergunta generica") == OPERACAO_SUCEDIDA);
+	char pergunta_generica[] = "pergunta generica";
+	No_Arvore * raiz = Cria_raiz(pergunta_generica);
+
+	REQUIRE(Add_no_esquerdo(raiz,pergunta_generica) == OPERACAO_SUCEDIDA);
 }
 
 TEST_CASE("Adicionar no a direita")
 {
-	No_Arvore * raiz = Cria_raiz("pergunta generica");	
-	REQUIRE(Add_no_direito(raiz,"pergunta generica") == OPERACAO_SUCEDIDA);
+	char pergunta_generica[] = "pergunta generica";
+	No_Arvore * raiz = Cria_raiz(pergunta_generica);
+
+	REQUIRE(Add_no_direito(raiz,pergunta_generica) == OPERACAO_SUCEDIDA);
+}
+
+TEST_CASE("Remover um no")
+{
+	char pergunta_generica[] = "pergunta generica";
+	No_Arvore * raiz = Cria_raiz(pergunta_generica);
+	Add_no_direito(raiz, pergunta_generica);
+	Add_no_esquerdo(raiz, pergunta_generica);
+
+	REQUIRE(Remover_no(raiz) == NULL);
 }
